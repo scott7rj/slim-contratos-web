@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Contratos</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link type="text/css" rel="stylesheet" href="css/lib/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/normalize.css" />
+    <link type="text/css" rel="stylesheet" href="css/html.css" />
+    <link type="text/css" rel="stylesheet" href="css/div.css" />
+    <link type="text/css" rel="stylesheet" href="css/form.css" />
+    <link type="text/css" rel="stylesheet" href="css/table.css" />
+    <link type="text/css" rel="stylesheet" href="css/icon.css" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    {% block css %}{% endblock %}
+</head>
+<body>
+	<div class="wrap1">
+        <div id="wrapa1">{% block a1content %}{% endblock %}</div>
+        <div id="wrapa2">{% block a2content %}{% endblock %}</div>
+    </div>
+
+    <div class="wrap2">
+        <div id="wrapb1">{% block b1content %}{% endblock %}</div>
+        <div id="wrapb2">{% block b2content %}{% endblock %}</div>
+        <div id="wrapb3">{% block b3content %}{% endblock %}</div>
+    </div>
+
+    <div class="wrap3">
+        <div id="wrapc1">{% block c1content %}{% endblock %}</div>
+        <div id="wrapc2">{% block c2content %}{% endblock %}</div>
+        <div id="wrapc3">{% block c3content %}{% endblock %}</div>
+        <div id="wrapc4">{% block c4content %}{% endblock %}</div>
+    </div>
+
+    <div class="wrap4">
+        <div id="wrapd1">{% block d1content %}{% endblock %}</div>
+        <div id="wrapd2">{% block d2content %}{% endblock %}</div>
+        <div id="wrapd3">{% block d3content %}{% endblock %}</div>
+        <div id="wrapd4">{% block d4content %}{% endblock %}</div>
+    </div>
+
+    <div class="wrap5">
+        <div id="wrape1">{% block e1content %}{% endblock %}</div>
+        <div id="wrape2">{% block e2content %}{% endblock %}</div>
+        <div id="wrape3">{% block e3content %}{% endblock %}</div>
+        <div id="wrape4">{% block e4content %}{% endblock %}</div>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery3.5.1.js"></script>
+
+    <script>
+
+        function resetLayoutSystem() {
+            $('.wrap3').css({'grid-template-columns':'0fr 1fr 1fr 0fr'});
+            $('.wrap4').css({'grid-template-columns':'0fr 1fr 1fr 1fr'});
+            $('.wrap5').css({'grid-template-columns':'0fr 1fr 1fr 0fr'});
+        }
+
+        function clearAllBusinessContentSystem() {
+            $('.wrap2 > div').html('');
+            $('.wrap3 > div').html('');
+            $('.wrap4 > div').html('');
+            $('.wrap5 > div').html('');
+        }
+
+		(function() {
+			$(document).ready(function() {
+				console.log('jquery3.5.1 loaded');
+			});
+		})();
+		
+        $('#dvLoginTxtId').focus();
+        
+        document.addEventListener("keydown", function(ev){
+            if(ev.ctrlKey && ev.key === 'ç') {
+                if (document.getElementById("dvMenuTxtPesquisa")) {
+                    document.getElementById("dvMenuTxtPesquisa").focus();
+                }
+            }
+        });
+
+        resetLayoutSystem();
+        clearAllBusinessContentSystem();
+
+	</script>
+	<script type="text/javascript" src="js/app.js"></script>
+	{% block script %}{% endblock %}
+</body>
+</html>
